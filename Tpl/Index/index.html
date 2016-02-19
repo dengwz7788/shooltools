@@ -1,0 +1,342 @@
+		<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">首页</a>
+							</li>
+							<li class="active">授权页面</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+					
+<div class="page-content">
+
+<!-- 快捷栏目 -->
+<div class="row">
+
+<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+
+								<div class="row-fluid">
+									<div class="span12">
+										<div class="widget-box">
+											<div class="widget-header widget-header-blue widget-header-flat">
+												<h4 class="lighter">教务系统授权</h4>
+
+												<div class="widget-toolbar">
+													<label>
+														<small class="green">
+															<b>记录到数据库</b>
+														</small>
+
+														<input id="skip-validation" type="checkbox" checked="checked" class="ace ace-switch ace-switch-4">
+														<span class="lbl"></span>
+													</label>
+												</div>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+													<div id="fuelux-wizard" class="row-fluid" data-target="#step-container">
+														<ul class="wizard-steps">
+															<li data-target="#step1" class="active">
+																<span class="step">1</span>
+																<span class="title">授权教务系统</span>
+															</li>
+
+															<li data-target="#step2">
+																<span class="step">2</span>
+																<span class="title">获取个人信息</span>
+															</li>
+
+															<li data-target="#step3">
+																<span class="step">3</span>
+																<span class="title">信息补全</span>
+															</li>
+
+															<li data-target="#step4">
+																<span class="step">4</span>
+																<span class="title">获取课表</span>
+															</li>
+														</ul>
+													</div>
+
+													<hr>
+													<div class="step-content row-fluid position-relative" id="step-container">
+														<div class="step-pane active" id="step1" >
+	  														<div class="alert alert-danger"><strong><i class="icon-remove"></i>悲剧啦</strong>教务处系统崩了~~登陆不了。只能查2015-06-15 之前的数据</div>
+	                    	    
+															<form class="form-horizontal" id="sample-form">
+														
+																<div class="form-group has-info">
+																	<label for="inputInfo" class="col-xs-12 col-sm-4 control-label no-padding-right">学号</label>
+
+																	<div class="col-xs-12 col-sm-3">
+																		<span class="block input-icon input-icon-right">
+																			<input type="text" id="inputUserID" class="width-100">
+																			<i class="icon-info-sign" title="输入教务系统关联的学号"></i>
+																		</span>
+																	</div>
+																	<div class="help-block col-xs-12 col-sm-reset inline textUserID"></div>
+																</div>
+																
+																<div class="form-group has-info">
+																	<label for="inputInfo" class="col-xs-12 col-sm-4 control-label no-padding-right">密码</label>
+
+																	<div class="col-xs-12 col-sm-3">
+																		<span class="block input-icon input-icon-right">
+																			<input type="password" id="inputUserPass" class="width-100">
+																			<i class="icon-info-sign" title="输入教务系统关联的密码"></i>
+																		</span>
+																	</div>
+																	<div class="help-block col-xs-12 col-sm-reset inline textPassword"></div>
+																</div>
+
+	
+															</form>
+
+														</div>
+
+														<div class="step-pane" id="step2">
+															<div class="row-fluid">
+															</div>
+														</div>
+
+														<div class="step-pane" id="step3">
+
+															<form class="form-horizontal" id="sample-form">
+														
+																<div class="form-group has-info">
+																	<label for="inputInfo" class="col-xs-12 col-sm-4 control-label no-padding-right">查询密码</label>
+
+																	<div class="col-xs-12 col-sm-3">
+																		<span class="block input-icon input-icon-right">
+																			<input type="text" id="password" class="width-100">
+																			<i class="icon-info-sign" title="本系统的查询密码，建议不要用教务系统的密码"></i>
+																		</span>
+																	</div>
+																	<div class="help-block col-xs-12 col-sm-reset inline textPasswordID2"></div>
+																</div>
+																
+																<div class="form-group has-info">
+																	<label for="inputInfo" class="col-xs-12 col-sm-4 control-label no-padding-right">联系电话</label>
+
+																	<div class="col-xs-12 col-sm-3">
+																		<span class="block input-icon input-icon-right">
+																			<input type="text" id="telephone" class="width-100">
+																			<i class="icon-info-sign" title="你的号码仅对你的同班同学和辅导员可见"></i>
+																		</span>
+																	</div>
+																	<div class="help-block col-xs-12 col-sm-reset inline textPassword"></div>
+																</div>
+
+	
+															</form>
+															
+														</div>
+
+														<div class="step-pane" id="step4">
+															<div class="center">
+																<h3 class="green">祝贺!你完成了所有的引导</h3>
+																你已经是工大圈里面的一员了，欢迎你的加入!
+															</div>
+														</div>
+													</div>
+
+													<hr>
+													<div class="row-fluid wizard-actions">
+														<button class="btn btn-prev prev" disabled="disabled">
+															<i class="icon-arrow-left"></i>
+															上一步
+														</button>
+
+														<button class="btn btn-success btn-next next" >
+															下一步
+															<i class="icon-arrow-right icon-on-right"></i>
+														</button>
+													</div>
+												</div><!-- /widget-main -->
+											</div><!-- /widget-body -->
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+</div><!-- /.row -->
+
+
+		</div><!-- /.page-content -->
+	</div><!-- /.main-content -->
+	<script type="text/javascript">
+		  $(function(){
+			      
+			      $("#inputUserID").focus(function(){
+			    	  $(".textUserID").html("请输入学号");
+			    	  $(this).parent().parent().parent().removeClass('has-warning').addClass('has-info');
+			    	 
+			      });
+			      
+			      $("#inputUserPass").focus(function(){
+			    	  $(".textPassword").html("请输入密码");
+			    	  $(this).parent().parent().parent().removeClass('has-warning').addClass('has-info');
+			    	 
+			      });
+			      
+			      $("#inputUserID").blur(function(){
+			    	  var userid = $.trim($("#inputUserID").val());
+			    	  var userlen = userid.length;
+			    	  
+			    	  if(isNaN(userid)){ 
+						   $(".textUserID").html("学号必须为数字");
+						   $(this).parent().parent().parent().removeClass('has-info').addClass('has-warning');
+						}
+			    	  
+			    	  if(userlen != 11){
+			    		  $(".textUserID").html("学号必须为11位的数字");
+			    		  $(this).parent().parent().parent().removeClass('has-info').addClass('has-warning');
+			    	  }else{
+			    		  $(".textUserID").html("学号格式正确");
+			    		  $(this).parent().parent().parent().removeClass('has-info').addClass('has-success');
+			    	  }
+			    	  
+			       });
+		
+		          $("#inputUserPass").blur(function(){
+			    	  var password = $.trim($("#inputUserPass").val());
+			    	  var passwordlen = password.length;
+
+			    	  if(passwordlen == 0){
+			    		  $(".textPassword").html("密码不能为空");
+			    		  $(this).parent().parent().parent().removeClass('has-info').addClass('has-warning');
+			    	  }else{
+			    		  $(".textPassword").html("密码已经填写");
+			    		  $(this).parent().parent().parent().removeClass('has-info').addClass('has-success');
+			    	  }  
+			    	  
+			      });
+		          
+		          $("#password").blur(function(){
+			    	  var password = $.trim($("#password").val());
+			    	  var passwordlen = password.length;
+
+			    	  if(passwordlen == 0){
+			    		  $(".textPasswordID2").html("查询密码为空,你将不能查询你的成绩");
+			    		  $(this).parent().parent().parent().removeClass('has-info').addClass('has-warning');
+			    	  }else{
+			    		  $(".textPasswordID2").html("请记住你的查询密码");
+			    		  $(this).parent().parent().parent().removeClass('has-info').addClass('has-success');
+			    	  }  
+			    	  
+			      });
+			      
+			
+				  $(".next").click(function(){
+
+  					   var node = 	$(".wizard-steps").find('li.active').last();
+					   	
+					   var nodeId = node.attr('data-target');
+					   
+					   
+					if(nodeId == "#step1")
+					{
+						   var userid = $.trim($("#inputUserID").val());
+						   var password = $.trim($("#inputUserPass").val());
+						   
+						   var data = {userid:userid,password:password};
+						   
+						   //把下一步的按钮屏蔽掉
+						    $(this).attr('disabled','disabled');						   
+						   	_post("__APP__/index.php/jwc/getUserData",data);
+					}
+					else if(nodeId == "#step3")
+					{
+						   var password = $.trim($("#password").val());
+						   var telephone = $.trim($("#telephone").val());
+						   var data = {telephone:telephone,password:password};
+						   _post("__APP__/index.php/User/addUserInfo",data);
+						   
+						   $(this).html("完成").removeClass('next');
+						   
+					}
+
+					   	node.next().addClass('active');
+					   	
+					   	$(nodeId).removeClass('active').next().addClass('active');
+					   	
+					   	//把上一步的按钮激活
+					   $(this).prev().removeAttr('disabled');					   	
+  
+				  });
+				  
+				  $(".prev").click(function(){
+
+					   	var node = 	$(".wizard-steps").find('li.active').last();
+	
+					   	var nodeId = node.attr('data-target');
+				
+					   	if(nodeId == "#step2")
+					   	{
+					   		 $(this).attr('disabled','disabled');
+					   	}
+					   	
+					   	$(".next").removeAttr('disabled');
+					   	
+					   	node.removeClass('active');
+					   	
+					   	$(nodeId).removeClass('active').prev().addClass('active');
+					   	
+					  
+				  });
+				
+			});
+				  
+				   function _post(url,post){
+					   
+	                   $.post(url,post,function(data){
+  
+	                         if(data.status){
+	                   
+	                        	 $msg = "<div class=\"alert alert-success\"><strong><i class=\"icon-ok\"></i>完美</strong>"+data.back.msg+"</div>"
+
+	                        	 $("#step2").find('.row-fluid').append($msg);
+	                        	 if(data.back.data.length != 0)
+	                        	 {
+	                        		 _post(data.back.url,data.back.data);
+	                        	 }
+	                        	 else
+	                        	 {
+	                        		 $(".next").removeAttr('disabled');
+	                        		 if(data.back.redirect.length != 0)
+	                        		 {
+	                        			 window.location.href = data.back.redirect;
+	                        		 }
+	                        	 }
+	                            
+	                      }else{
+	                    	  
+	                    	    $msg = "<div class=\"alert alert-danger\"><strong><i class=\"icon-remove\"></i>悲剧啦</strong>"+data.back.msg+"</div>"
+	                    	    $("#step2").find('.row-fluid').append($msg);
+	                    	    return false;
+	                      }
+	                       
+	 
+	                 },"json");
+      
+			};
+			
+		
+		</script>

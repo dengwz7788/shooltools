@@ -1,0 +1,323 @@
+		<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">首页</a>
+							</li>
+							<li class="active">调查问卷</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+					
+<div class="page-content">
+
+<!-- 快捷栏目 -->
+<div class="row">
+
+<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+
+								<div class="row-fluid">
+									<div class="span12">
+										<div class="widget-box">
+											<div class="widget-header widget-header-blue widget-header-flat">
+												<h4 class="lighter">调查问卷</h4>
+
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+												
+														<div class="progress" data-percent="66%" >
+															<div class="progress-bar" style="width:66%;"></div>
+														</div>
+												</div><!-- /widget-main -->
+											</div><!-- /widget-body -->
+										</div>
+									</div>
+								</div>
+
+</div>
+
+<!-- 问卷内容 -->
+<div class="col-sm-12">
+										<div class="widget-box">
+											<div class="widget-header widget-header-flat">
+												<h4 class="smaller">
+													<i class="icon-quote-left smaller-80"></i>
+													 问题来了
+												</h4>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+												
+													<div class="row">
+														<div class="col-xs-12">
+															<blockquote>
+																<p> 问题来了 问题来了 问题来了 问题来了 问题来了 问题来了 问题来了 问题来了 问题来了</p>														
+															</blockquote>
+														</div>
+													</div>
+													
+													<div class="row">
+														<div class="col-xs-12">
+														
+															  <div class="pull-left"> 
+										
+																   <div class="radio ">
+																	<label>
+																		<input name="form-field-radio" type="radio" class="ace">
+																		<span class="lbl"> 答案1</span>
+																	</label>
+																  </div>
+															   </div>
+															   
+															   	  <div class="pull-left"> 
+										
+																   <div class="radio ">
+																	<label>
+																		<input name="form-field-radio" type="radio" class="ace">
+																		<span class="lbl"> 答案2</span>
+																	</label>
+																  </div>
+															   </div>														
+															
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+</div>
+
+
+<div class="col-sm-12">
+										<div class="widget-box">
+											<div class="widget-header widget-header-flat">
+												<h4 class="smaller">
+													<i class="icon-quote-left smaller-80"></i>
+													 问题来了
+												</h4>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+												
+													<div class="row">
+														<div class="col-xs-12">
+															<blockquote>
+																<p> 问题来了 问题来了 问题来了 问题来了 问题来了 问题来了 问题来了 问题来了 问题来了</p>														
+															</blockquote>
+														</div>
+													</div>
+													
+													<div class="row">
+														<div class="col-xs-12">
+														
+															  <div class="pull-left"> 
+										
+																   <div class="radio ">
+																	<label>
+																		<input name="form-field-radio" type="radio" class="ace">
+																		<span class="lbl"> 答案1</span>
+																	</label>
+																  </div>
+															   </div>
+															   
+															   	  <div class="pull-left"> 
+										
+																   <div class="radio ">
+																	<label>
+																		<input name="form-field-radio" type="radio" class="ace">
+																		<span class="lbl"> 答案2</span>
+																	</label>
+																  </div>
+															   </div>														
+															
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+</div>
+<!-- 问卷结束 -->
+
+</div><!-- /.row -->
+
+
+		</div><!-- /.page-content -->
+	</div><!-- /.main-content -->
+	<script type="text/javascript">
+		  $(function(){
+			      
+			      $("#inputUserID").focus(function(){
+			    	  $(".textUserID").html("请输入学号");
+			    	  $(this).parent().parent().parent().removeClass('has-warning').addClass('has-info');
+			    	 
+			      });
+			      
+			      $("#inputUserPass").focus(function(){
+			    	  $(".textPassword").html("请输入密码");
+			    	  $(this).parent().parent().parent().removeClass('has-warning').addClass('has-info');
+			    	 
+			      });
+			      
+			      $("#inputUserID").blur(function(){
+			    	  var userid = $.trim($("#inputUserID").val());
+			    	  var userlen = userid.length;
+			    	  
+			    	  if(isNaN(userid)){ 
+						   $(".textUserID").html("学号必须为数字");
+						   $(this).parent().parent().parent().removeClass('has-info').addClass('has-warning');
+						}
+			    	  
+			    	  if(userlen != 11){
+			    		  $(".textUserID").html("学号必须为11位的数字");
+			    		  $(this).parent().parent().parent().removeClass('has-info').addClass('has-warning');
+			    	  }else{
+			    		  $(".textUserID").html("学号格式正确");
+			    		  $(this).parent().parent().parent().removeClass('has-info').addClass('has-success');
+			    	  }
+			    	  
+			       });
+		
+		          $("#inputUserPass").blur(function(){
+			    	  var password = $.trim($("#inputUserPass").val());
+			    	  var passwordlen = password.length;
+
+			    	  if(passwordlen == 0){
+			    		  $(".textPassword").html("密码不能为空");
+			    		  $(this).parent().parent().parent().removeClass('has-info').addClass('has-warning');
+			    	  }else{
+			    		  $(".textPassword").html("密码已经填写");
+			    		  $(this).parent().parent().parent().removeClass('has-info').addClass('has-success');
+			    	  }  
+			    	  
+			      });
+		          
+		          $("#password").blur(function(){
+			    	  var password = $.trim($("#password").val());
+			    	  var passwordlen = password.length;
+
+			    	  if(passwordlen == 0){
+			    		  $(".textPasswordID2").html("查询密码为空,你将不能查询你的成绩");
+			    		  $(this).parent().parent().parent().removeClass('has-info').addClass('has-warning');
+			    	  }else{
+			    		  $(".textPasswordID2").html("请记住你的查询密码");
+			    		  $(this).parent().parent().parent().removeClass('has-info').addClass('has-success');
+			    	  }  
+			    	  
+			      });
+			      
+			
+				  $(".next").click(function(){
+
+  					   var node = 	$(".wizard-steps").find('li.active').last();
+					   	
+					   var nodeId = node.attr('data-target');
+					   
+					   
+					if(nodeId == "#step1")
+					{
+						   var userid = $.trim($("#inputUserID").val());
+						   var password = $.trim($("#inputUserPass").val());
+						   
+						   var data = {userid:userid,password:password};
+						   
+						   //把下一步的按钮屏蔽掉
+						    $(this).attr('disabled','disabled');						   
+						   	_post("__APP__/index.php/jwc/getUserData",data);
+					}
+					else if(nodeId == "#step3")
+					{
+						   var password = $.trim($("#password").val());
+						   var telephone = $.trim($("#telephone").val());
+						   var data = {telephone:telephone,password:password};
+						   _post("__APP__/index.php/User/addUserInfo",data);
+						   
+						   $(this).html("完成").removeClass('next');
+						   
+					}
+
+					   	node.next().addClass('active');
+					   	
+					   	$(nodeId).removeClass('active').next().addClass('active');
+					   	
+					   	//把上一步的按钮激活
+					   $(this).prev().removeAttr('disabled');					   	
+  
+				  });
+				  
+				  $(".prev").click(function(){
+
+					   	var node = 	$(".wizard-steps").find('li.active').last();
+	
+					   	var nodeId = node.attr('data-target');
+				
+					   	if(nodeId == "#step2")
+					   	{
+					   		 $(this).attr('disabled','disabled');
+					   	}
+					   	
+					   	$(".next").removeAttr('disabled');
+					   	
+					   	node.removeClass('active');
+					   	
+					   	$(nodeId).removeClass('active').prev().addClass('active');
+					   	
+					  
+				  });
+				
+			});
+				  
+				   function _post(url,post){
+					   
+	                   $.post(url,post,function(data){
+  
+	                         if(data.status){
+	                   
+	                        	 $msg = "<div class=\"alert alert-success\"><strong><i class=\"icon-ok\"></i>完美</strong>"+data.back.msg+"</div>"
+
+	                        	 $("#step2").find('.row-fluid').append($msg);
+	                        	 if(data.back.data.length != 0)
+	                        	 {
+	                        		 _post(data.back.url,data.back.data);
+	                        	 }
+	                        	 else
+	                        	 {
+	                        		 $(".next").removeAttr('disabled');
+	                        		 if(data.back.redirect.length != 0)
+	                        		 {
+	                        			 window.location.href = data.back.redirect;
+	                        		 }
+	                        	 }
+	                            
+	                      }else{
+	                    	  
+	                    	    $msg = "<div class=\"alert alert-danger\"><strong><i class=\"icon-remove\"></i>悲剧啦</strong>"+data.back.msg+"</div>"
+	                    	    $("#step2").find('.row-fluid').append($msg);
+	                    	    return false;
+	                      }
+	                       
+	 
+	                 },"json");
+      
+			};
+			
+		
+		</script>

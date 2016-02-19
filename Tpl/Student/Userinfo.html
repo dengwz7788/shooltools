@@ -1,0 +1,140 @@
+<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">首页</a>
+							</li>
+							<li class="active">个人信息</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+					
+					<div class="page-content">
+					
+							<!-- 个人详细 -->
+							<div class="row">
+							
+							<div id="user-profile-1" class="user-profile row-fluid">
+									<div class="span3 center">
+										<div>
+											<span class="profile-picture">
+												<img id="avatar" class="editable editable-click editable-empty" alt="{$TrueName}" src="__PUBLIC__/avatars/profile-pic.jpg"></img>
+											</span>
+
+											<div class="space-4"></div>
+
+										</div>
+
+										<div class="hr hr12 dotted"></div>
+
+									</div>
+
+									<div class="span9">
+
+										<div class="space-12"></div>
+
+										<div class="profile-user-info profile-user-info-striped">
+											<div class="profile-info-row">
+												<div class="profile-info-name"> 姓名 </div>
+
+												<div class="profile-info-value">
+													<span id="TrueName">{$TrueName}</span>
+												</div>
+											</div>
+
+											<div class="profile-info-row">
+												<div class="profile-info-name"> 学院 </div>
+
+												<div class="profile-info-value">
+													<span  id="schoolname">{$UserInfo.schoolname}</span>
+													<span  id="depname">{$UserInfo.depname}</span>
+												</div>
+											</div>
+
+											<div class="profile-info-row">
+												<div class="profile-info-name"> 班级 </div>
+
+												<div class="profile-info-value">
+													<span id="classname">{$UserInfo.classname}</span>
+												</div>
+											</div>
+
+											<div class="profile-info-row">
+												<div class="profile-info-name"> 年级 </div>
+
+												<div class="profile-info-value">
+													<span id="garde">{$UserInfo.garde}</span>
+												</div>
+											</div>
+
+											<div class="profile-info-row">
+												<div class="profile-info-name"> 学历 </div>
+
+												<div class="profile-info-value">
+													<span id="level">{$UserInfo.level}</span>
+												</div>
+											</div>
+											
+											<div class="profile-info-row">
+												<div class="profile-info-name"> 注册来源 </div>
+
+												<div class="profile-info-value">
+													<span id="level">{$UserInfo.source}</span>
+												</div>
+											</div>
+
+											<div class="profile-info-row">
+												<div class="profile-info-name"> 联系电话 </div>
+
+												<div class="profile-info-value">
+													<span class="editable editable-click" id="telephone">{$UserInfo.telephone}</span>
+												</div>
+											</div>
+										</div>
+
+										<div class="space-20"></div>
+
+									</div>
+								</div>
+							
+							</div>
+							<!-- 个人信息-->
+					
+					</div>
+</div><!-- /.main-content -->
+
+<script>
+  $(function(){
+	  
+	//editables on first profile page
+		$.fn.editable.defaults.mode = 'inline';
+		$.fn.editableform.loading = "<div class='editableform-loading'><i class='light-blue icon-2x icon-spinner icon-spin'></i></div>";
+	    $.fn.editableform.buttons = '<button type="submit" class="btn btn-info editable-submit"><i class="icon-ok icon-white"></i></button>'+
+	                                '<button type="button" class="btn editable-cancel"><i class="icon-remove"></i></button>';    
+	  
+	   
+	     var  SaveUrl = "__APP__/index.php/Student/SaveUserinfo";
+	    //editables 
+	    $('#telephone').editable({
+	           type: 'text',
+	           name: 'telephone',
+	           url:SaveUrl,
+	           inputclass:"input-large",
+	           placeholder:'手机号码为11为数字',
+	           pk:{$Think.session.userid}
+	    });
+  });
+</script>

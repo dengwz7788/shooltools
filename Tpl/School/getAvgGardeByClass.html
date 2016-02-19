@@ -1,0 +1,134 @@
+<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">首页</a>
+							</li>
+							<li class="active">班级平均分分布</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+	</div>
+
+
+<script src="__PUBLIC__/js/ZeroClipboard.js"></script>	
+<script>
+$(function(){
+	/* 定义所有class为copy标签，点击后可复制被点击对象的文本 */
+	var clip = null;
+	ZeroClipboard.setMoviePath("__PUBLIC__/js/ZeroClipboard.swf");
+	clip = new ZeroClipboard.Client();
+	clip.setHandCursor(true);
+	clip.setText($("#copy-button").attr('href'));
+	clip.glue("copy-button");
+	clip.addEventListener("complete", function(){
+		alert("代码已复制到剪贴板！");
+	});
+})
+</script>
+<div class="page-content">
+<if condition="result eq 0">
+<script src="__PUBLIC__/js/highcharts/highcharts.js"></script>
+<script src="__PUBLIC__/js/highcharts/modules/exporting.js"></script>		
+
+<script type="text/javascript">
+$(function () {
+  
+    $('#container').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: 1,//null,
+            plotShadow: false
+        },
+        title: {
+            text: '{$title}'
+        },
+        tooltip: {
+    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: '所占比例',
+            data: [ 
+                   <volist name="rand" id="v1">			
+                   ['{$key}',{$v1}],
+               </volist>
+            ]
+        }]
+    });
+    
+});
+    
+
+		</script>
+</if>
+<!-- 蹇嵎鏍忕洰 -->
+<div class="row">
+
+<!-- 鏁版嵁缁熻 -->
+
+<!-- 澶辫触鏁版嵁缁熻 -->
+
+
+<div class="col-sm-12">
+		<div class="widget-box transparent">
+				<div class="widget-header widget-header-flat">
+							<h4 class="lighter">
+							<i class="icon-star orange"></i>班级平均分分布</h4>
+
+												<div class="widget-toolbar">
+													<a href="#" data-action="collapse">
+														<i class="icon-chevron-up"></i>
+													</a>
+												</div>
+											</div>
+
+											<div class="widget-body">
+											   <div class="widget-body-inner">
+												<div class="widget-main no-padding">
+												   <p class="alert alert-info">
+													 {$hit} <span class="label label-success pull-right">我的排名:{$selfPos}%</span>
+													</p>
+													<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+												</div><!-- /widget-main -->
+											</div>
+										</div><!-- /widget-body -->
+											
+									</div><!-- /widget-box -->
+									
+								</div>
+<!-- 澶辫触鏁版嵁缁熻缁撴潫 -->
+<!-- 鏈�繎鎴樻姤 -->
+<!-- 鏈�繎鎴樻姤 缁撶畻 -->	
+
+
+
+	</div><!-- /.row -->
+
+</div><!-- /.page-content -->
+</div><!-- /.main-content -->

@@ -1,0 +1,156 @@
+<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">首页</a>
+							</li>
+							<li class="active">成绩汇总</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+	</div>
+					
+<div class="page-content">
+
+<!-- 快捷栏目 -->
+<div class="row">
+
+<!-- 成绩汇总 结算-->	
+<div class="col-sm-12">
+		<div class="widget-box transparent">
+				<div class="widget-header widget-header-flat">
+							<h4 class="lighter"><i class="icon-star orange"></i>所有学年</h4>
+				</div>
+					
+				<div id="accordion" class="accordion-style1 panel-group accordion-style2">
+									<volist name="Data" key="key" id="v1">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+														<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{$key}">
+															<i class="bigger-110 icon-angle-right" data-icon-hide="icon-angle-down" data-icon-show="icon-angle-right"></i>
+															{$v1.schoolYear} -- 第{$v1.semester}学期 ，平均分:{$v1.AvgGrade}，学期绩点:{$v1.GradePoint}
+															
+															<if condition="$v1.AvgGrade eq $Max">
+															<span class="pull-right">历史最高</span>
+															</if>
+															
+															<if condition="$v1.AvgGrade eq $Mix">
+															<span class="pull-right">历史最低</span>
+															</if>
+														</a>
+													</h4>
+												</div>
+
+												<div class="panel-collapse collapse" id="collapse{$key}" style="height: 0px;">
+													<div class="panel-body">
+												  <table class="table table-bordered table-striped">
+														<thead class="thin-border-bottom">
+															<tr>
+																<th>
+																	<i class="icon-caret-right blue"></i>
+																	科目
+																</th>
+																
+																<th>
+																	<i class="icon-caret-right blue"></i>
+																	学年
+																</th>
+																
+																<th>
+																	<i class="icon-caret-right blue"></i>
+																	学期
+																</th>
+
+																<th>
+																	<i class="icon-caret-right blue"></i>
+																	成绩
+																</th>
+
+																<th class="hidden-480">
+																	<i class="icon-caret-right blue"></i>
+																	状态
+																</th>
+																
+																<th>
+																   <i class="icon-caret-right blue"></i>
+																	考试性质
+																</th>
+																
+																<th class="hidden-480">
+																	<i class="icon-caret-right blue"></i>
+																	课程类型
+																</th>
+																
+																<th class="hidden-480">
+																	<i class="icon-caret-right blue"></i>
+																	原因
+																</th>
+															</tr>
+														</thead>
+
+														<tbody>
+														  <volist name="v1.GradeList" id="v2">
+															<tr>
+																<td>{$v2.coursename}</td>
+																<td>{$v2.schoolYear}</td>
+																<td>{$v2.semester}</td>
+
+																<td>
+																	 <b class="green">{$v2.grade}</b>
+																</td>
+																
+																<td class="hidden-480">
+																 <if condition="$v2.grade lt 60">
+																	 <span class="label label-danger arrowed">{$v2.gradeText}</span>
+																 <else/>
+																   <span class="label label-info arrowed-right arrowed-in">{$v2.gradeText}</span>
+																 </if>
+																</td>
+																
+																<td>{$v2.isAgainText}</td>
+				
+																<td>{$v2.type}</td>
+							
+																 <td>{$v2.mark}</td>
+
+															</tr>
+											               </volist>
+														</tbody>
+													</table>
+													</div>
+												</div>
+											</div>
+									</volist>
+											</div>
+
+						</div>
+								
+       
+									</div><!-- /widget-box -->
+								</div>
+
+
+	</div><!-- /.row -->
+
+</div><!-- /.page-content -->
+</div><!-- /.main-content -->
+<script type="text/javascript">
+$(function(){
+
+	$("#accordion").children(0).eq(0).find("a").trigger("click");
+})
+</script>
+</if>

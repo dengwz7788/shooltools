@@ -1,0 +1,227 @@
+		<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">首页</a>
+							</li>
+							<li class="active">优秀毕业生</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+					
+<div class="page-content">
+
+<div class="hr dotted"></div>
+		<!-- 个人详细 -->
+<div class="row">
+														<div class="col-xs-12 col-sm-3 center">
+															<span class="profile-picture">
+																<img class="editable img-responsive" alt="Alex's Avatar" id="avatar2" src="__PUBLIC__/avatars/profile-pic.jpg">
+															</span>
+
+															<div class="space space-4"></div>
+
+															<a href="#" class="btn btn-sm btn-block btn-success">
+																<i class="icon-plus-sign bigger-120"></i>
+																<span class="bigger-110">标记一下</span>
+															</a>
+
+															<a href="#" class="btn btn-sm btn-block btn-primary">
+																<i class="icon-envelope-alt bigger-110"></i>
+																<span class="bigger-110">发送自己的简历</span>
+															</a>
+														</div><!-- /span -->
+
+														<div class="col-xs-12 col-sm-9">
+															<h4 class="blue">
+																<span class="middle"><span style="display:none;">{}</span>{$data.name}</span>
+
+																<span class="label label-purple arrowed-in-right">
+																	<i class="icon-circle smaller-80 align-middle"></i>
+																	{$data.garde}届
+																</span>
+															</h4>
+
+															<div class="profile-user-info">
+																<div class="profile-info-row">
+																	<div class="profile-info-name">班级</div>
+
+																	<div class="profile-info-value">
+																		<span>{$data.classname}</span>
+																	</div>
+																</div>
+
+																<div class="profile-info-row">
+																	<div class="profile-info-name"> 现在就职公司 </div>
+
+																	<div class="profile-info-value">
+																		<i class="icon-map-marker light-orange bigger-110"></i>
+																		<span>{$data.companyaddress}</span>
+																		<span>{$data.companyname}({$data.companytype},人数:{$data.companysize})</span>
+																	</div>
+																</div>
+
+																<div class="profile-info-row">
+																	<div class="profile-info-name"> 职位 </div>
+
+																	<div class="profile-info-value">
+																		<span>{$data.postname}</span>
+																	</div>
+																</div>
+
+																<div class="profile-info-row">
+																	<div class="profile-info-name"> 入职时间 </div>
+
+																	<div class="profile-info-value">
+																		<span>{$data.EnterDate}</span>
+																	</div>
+																</div>
+
+																<div class="profile-info-row">
+																	<div class="profile-info-name"> 信息更新时间 </div>
+
+																	<div class="profile-info-value">
+																		<span>3 小时前</span>
+																	</div>
+																</div>
+															</div>
+
+															<div class="hr hr-8 dotted"></div>
+
+															<div class="profile-user-info">
+																<div class="profile-info-row">
+																	<div class="profile-info-name"> 个人博客 </div>
+
+																	<div class="profile-info-value">
+																		<a href="{$data.Websites}" target="_blank">{$data.Websites}</a>
+																	</div>
+																</div>
+
+																<div class="profile-info-row">
+																	<div class="profile-info-name">
+																		<i class="middle icon-facebook-sign bigger-150 blue"></i>
+																	</div>
+
+																	<div class="profile-info-value">
+																		<a href="#">加为好友</a>
+																	</div>
+																</div>
+
+																<div class="profile-info-row">
+																	<div class="profile-info-name">
+																		<i class="middle icon-twitter-sign bigger-150 light-blue"></i>
+																	</div>
+
+																	<div class="profile-info-value">
+																		<a href="#">关注微博</a>
+																	</div>
+																</div>
+															</div>
+														</div><!-- /span -->
+</div>
+<!-- 个人信息-->
+<div class="space-20"></div>
+<div class="row">
+			<div class="col-xs-12 col-sm-6">
+				<div class="widget-box transparent">
+																<div class="widget-header widget-header-small">
+																	<h4 class="smaller">
+																		<i class="icon-check bigger-110"></i>
+																		  职位描述 -- {$data.postname}
+																	</h4>
+																</div>
+
+																<div class="widget-body">
+																	<div class="widget-main">
+																		{$data.Description}
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xs-12 col-sm-6">
+															<div class="widget-box transparent">
+																<div class="widget-header widget-header-small header-color-blue2">
+																	<h4 class="smaller">
+																		<i class="icon-lightbulb bigger-120"></i>
+																		主要技能 -- 初级{$data.postname}
+																	</h4>
+																</div>
+
+																<div class="widget-body">
+																	<div class="widget-main padding-16">
+																	 <div class="clearfix">
+																			<div class="grid3 center">
+																				<div class="easy-pie-chart percentage" data-percent="90" data-color="#CA5952">
+																					<span class="percent">90</span>%
+																				</div>
+
+																				<div class="space-2"></div>
+																				PHP
+																			</div>
+
+																			<div class="grid3 center">
+																				<div class="center easy-pie-chart percentage" data-percent="60" data-color="#59A84B">
+																					<span class="percent">60</span>%
+																				</div>
+
+																				<div class="space-2"></div>
+																				MYSQL
+																			</div>
+
+																			<div class="grid3 center">
+																				<div class="center easy-pie-chart percentage" data-percent="40" data-color="#9585BF">
+																					<span class="percent">40</span>%
+																				</div>
+
+																				<div class="space-2"></div>
+																				Javascript/jQuery/CSS
+																			</div>
+																		</div>
+
+																		<div class="hr hr-16"></div>
+
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+
+
+	</div><!-- /.page-content -->
+</div><!-- /.main-content -->
+
+<script type="text/javascript">
+$(function(){
+
+		$('.easy-pie-chart.percentage').each(function(){
+		var barColor = $(this).data('color') || '#555';
+		var trackColor = '#E2E2E2';
+		var size = parseInt($(this).data('size')) || 72;
+		$(this).easyPieChart({
+			barColor: barColor,
+			trackColor: trackColor,
+			scaleColor: false,
+			lineCap: 'butt',
+			lineWidth: parseInt(size/10),
+			animate:false,
+			size: size
+		}).css('color', barColor);
+		});
+	
+})
+</script>

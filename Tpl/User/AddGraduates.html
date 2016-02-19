@@ -1,0 +1,394 @@
+		<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">首页</a>
+							</li>
+							<li class="active">信息收集</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+					
+<div class="page-content">
+<input type="hidden" id="userid" value="{}" />
+		<!-- 个人详细 -->
+<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+								<div class="hr dotted"></div>
+
+								<div class="">
+									<div id="user-profile-3" class="user-profile row">
+										<div class="col-sm-offset-1 col-sm-10">
+								
+											<div class="space"></div>
+
+											<form class="form-horizontal" action="__APP__/index.php/User/saveGraduates" method="post">
+											
+												<div class="tabbable">
+													<ul class="nav nav-tabs padding-16">
+														<li class="active">
+															<a data-toggle="tab" href="#edit-basic">
+																<i class="green icon-edit bigger-125"></i>
+																基本信息
+															</a>
+														</li>
+
+														<li class="">
+															<a data-toggle="tab" href="#edit-settings">
+																<i class="purple icon-cog bigger-125"></i>
+																设置隐身
+															</a>
+														</li>
+
+														<li class="">
+															<a data-toggle="tab" href="#edit-password">
+																<i class="blue icon-key bigger-125"></i>
+																密码管理
+															</a>
+														</li>
+													</ul>
+
+													<div class="tab-content profile-edit-tab-content">
+														<div id="edit-basic" class="tab-pane active">
+															<h4 class="header blue bolder smaller">{$data.name} 基本情况</h4>
+
+															<div class="row">
+															  <div class="col-xs-12 col-sm-4" id="avatar">
+																	<input type="file" />
+																</div>
+
+<input type="hidden" name="userid" id="userid" value="{$Think.session.userid}" />
+
+																<div class="vspace-xs"></div>
+                                                          <if condition="$data.name eq null">
+																<div class="col-xs-12 col-sm-8" id="userinfo">
+																	<div class="form-group">
+																		<label class="col-sm-4 control-label no-padding-right" for="form-field-username">学号</label>
+
+																		<div class="col-sm-8">
+																			<input class="col-xs-12 col-sm-10" type="text" id="inputUserID" placeholder="登录教务系统的学号" value="">
+																		</div>
+																	</div>
+
+																	<div class="space-4"></div>
+																	<div class="form-group">
+																		<label class="col-sm-4 control-label no-padding-right" for="form-field-username">密码</label>
+
+																		<div class="col-sm-8">
+																			<input class="col-xs-12 col-sm-10" type="password" id="inputUserPass" placeholder="登录教务系统的密码" value="">
+																		</div>
+																	</div>
+																	
+																		<div class="col-md-offset-3 col-md-9 ">
+																			<button class="btn btn-info pull-right" id="Info" type="button">
+																				获取个人信息
+																			</button>
+																		</div>
+		
+																</div>
+	 													  <else />
+	 													   已经存在数据
+	 													  </if>
+															</div>
+															<div class="space-4"></div>
+															
+															<hr />
+															
+															<div class="form-group">
+																<label class="col-sm-3 control-label no-padding-right" for="form-field-date">公司名称</label>
+
+																<div class="col-sm-4">
+																	
+																	<input class="col-xs-12 col-sm-10" name="company[companyname]" type="text" id="form-field-username" value="{$data.companyname}" placeholder="四三九九信息科技有限公司">
+																</div>
+															</div>
+															
+														   <div class="form-group">
+																<label class="col-sm-3 control-label no-padding-right" for="form-field-date">公司信息</label>
+
+																<div class="col-sm-5">
+																       <select name="company[companyaddress]" class="col-sm-3" id="form-field-select-1">
+																          <option value="广州">广州</option>
+																          <option value="深圳">深圳</option>
+																          <option value="珠海">珠海</option>
+																          <option value="北京">北京</option>
+																        </select> 
+																
+															      		<select name="company[companytype]" class="col-sm-3" id="form-field-select-1">
+																          <option value="国企">国企</option>
+																          <option value="私企">私企</option>
+																          <option value="上市">上市</option>
+																        </select> 
+																 &nbsp;&nbsp;&nbsp;&nbsp;  
+																       <input name="company[companysize]" class="input-small" value="{$data.companysize}" type="text" id="form-field-first" placeholder="人数"> 
+																</div>
+															</div>
+															
+															<div class="space-4"></div>
+
+															<div class="space"></div>
+															<h4 class="header blue bolder smaller">联系方式</h4>
+
+															<div class="form-group">
+																<label class="col-sm-3 control-label no-padding-right" for="form-field-email">Email</label>
+
+																<div class="col-sm-9">
+																	<span class="input-icon input-icon-right">
+																		<input type="email" name="userinfo[Email]" id="form-field-email" value="{$data.Email}" />
+																		<i class="icon-envelope"></i>
+																	</span>
+																</div>
+															</div>
+
+															<div class="space-4"></div>
+
+															<div class="form-group">
+																<label class="col-sm-3 control-label no-padding-right" for="form-field-website">Website</label>
+
+																<div class="col-sm-9">
+																	<span class="input-icon input-icon-right">
+																		<input type="url"  name="userinfo[Websites]" id="form-field-website" value="{$data.Websites}" />
+																		<i class="icon-globe"></i>
+																	</span>
+																</div>
+															</div>
+
+															<div class="space-4"></div>
+
+															<div class="form-group">
+																<label class="col-sm-3 control-label no-padding-right" for="form-field-phone">QQ</label>
+
+																<div class="col-sm-9">
+																	<span class="input-icon input-icon-right">
+																		<input name="userinfo[QQ]" class="input-medium input-mask-phone" value="{$data.QQ}" type="text" id="form-field-phone" />
+																		<i class="icon-facebook icon-flip-horizontal"></i>
+																	</span>
+																</div>
+															</div>
+															
+															<div class="form-group">
+																<label class="col-sm-3 control-label no-padding-right" for="form-field-phone">Weibo</label>
+
+																<div class="col-sm-9">
+																	<span class="input-icon input-icon-right">
+																		<input name="userinfo[Weibo]" class="input-medium input-mask-phone" value="{$data.Weibo}" type="text" id="form-field-phone">
+																		<i class="icon-weibo icon-flip-horizontal"></i>
+																	</span>
+																</div>
+															</div>
+
+															<div class="space"></div>
+															<h4 class="header blue bolder smaller">职位信息</h4>
+
+															<div class="form-group">
+																<label class="col-sm-3 control-label no-padding-right" for="form-field-facebook">职位名称</label>
+
+																<div class="col-sm-9">
+																	<span class="input-icon input-icon-right">
+																		<input name="post[PostName]" type="text" value="{$data.postname}" id="form-field-facebook" placeholder="PHP开发工程师">
+																	</span>
+																</div>
+															</div>
+
+															<div class="space-4"></div>
+
+															<div class="form-group">
+																<label class="col-sm-3 control-label no-padding-right" for="form-field-twitter">职位类型</label>
+
+																<div class="col-sm-9">
+																	<span class="input-icon input-icon-right">
+																		<input name="post[PostType]" type="text" value="{$data.posttype}"   id="form-field-twitter" placeholder="WEB开发">
+																	</span>
+																</div>
+															</div>
+
+															<div class="space-4"></div>
+
+															<div class="form-group">
+																<label class="col-sm-3 control-label no-padding-right" for="form-field-gplus">职位描述</label>
+
+																<div class="col-sm-9">
+																	<span>
+																		<textarea name="post[Description]"  id="editor_id" name="content" style="width:600px;height:300px;">{$data.Description}</textarea>
+																	</span>
+																</div>
+															</div>
+														</div>
+
+														<div id="edit-settings" class="tab-pane">
+															<div class="space-10"></div>
+
+															<div>
+																<label class="inline">
+																	<input type="checkbox" name="form-field-checkbox" class="ace">
+																	<span class="lbl"> Make my profile public</span>
+																</label>
+															</div>
+
+															<div class="space-8"></div>
+
+															<div>
+																<label class="inline">
+																	<input type="checkbox" name="form-field-checkbox" class="ace">
+																	<span class="lbl"> Email me new updates</span>
+																</label>
+															</div>
+
+															<div class="space-8"></div>
+
+															<div>
+																<label class="inline">
+																	<input type="checkbox" name="form-field-checkbox" class="ace">
+																	<span class="lbl"> Keep a history of my conversations</span>
+																</label>
+
+																<label class="inline">
+																	<span class="space-2 block"></span>
+
+																	for
+																	<input type="text" class="input-mini" maxlength="3">
+																	days
+																</label>
+															</div>
+														</div>
+
+														<div id="edit-password" class="tab-pane">
+															<div class="space-10"></div>
+
+															<div class="form-group">
+																<label class="col-sm-3 control-label no-padding-right" for="form-field-pass1">New Password</label>
+
+																<div class="col-sm-9">
+																	<input type="password" id="form-field-pass1">
+																</div>
+															</div>
+
+															<div class="space-4"></div>
+
+															<div class="form-group">
+																<label class="col-sm-3 control-label no-padding-right" for="form-field-pass2">Confirm Password</label>
+
+																<div class="col-sm-9">
+																	<input type="password" id="form-field-pass2">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="clearfix form-actions">
+													<div class="col-md-offset-3 col-md-9">
+														<button class="btn btn-info" type="submit">
+															<i class="icon-ok bigger-110"></i>
+															Save
+														</button>
+
+														&nbsp; &nbsp;
+														<button class="btn" type="reset">
+															<i class="icon-undo bigger-110"></i>
+															Reset
+														</button>
+													</div>
+												</div>
+											</form>
+										</div><!-- /span -->
+									</div><!-- /user-profile -->
+								</div>
+
+								<!-- PAGE CONTENT ENDS -->
+							</div><!-- /.col -->
+						</div>
+</div>
+	</div><!-- /.page-content -->
+</div><!-- /.main-content -->
+
+<script>
+        KindEditor.ready(function(K) {
+        	   var editor;
+               KindEditor.ready(function(K) {
+                       editor = K.create('#editor_id', {
+                               themeType : 'simple',
+                               items:[
+                                      'source', '|', 'undo', 'redo', '|', 'cut', 'copy', 'paste',
+                                      'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+                                      'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+                                      'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+                                      'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+                                      'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|',
+                                      
+                                     ]
+                       });
+               });
+                
+        });
+        
+        $(function(){
+        	
+        	$('#avatar').find('input[type=file]').ace_file_input({
+				style:'well',
+				btn_choose:'Change avatar',
+				btn_change:null,
+				no_icon:'icon-picture',
+				thumbnail:'large',
+				droppable:true,
+				before_change: function(files, dropped) {
+					var file = files[0];
+					if(typeof file === "string") {
+						if(! (/\.(jpe?g|png|gif)$/i).test(file) ) return false;
+					} else {
+						var type = $.trim(file.type);
+						if( ( type.length > 0 && ! (/^image\/(jpe?g|png|gif)$/i).test(type) )
+								|| ( type.length == 0 && ! (/\.(jpe?g|png|gif)$/i).test(file.name) )
+							) return false;
+		
+						if( file.size > 110000 ) {
+							return false;
+						}
+					}
+					
+					//上传图片
+		
+					return true;
+				}
+			})
+			
+		$("#Info").click(function(){
+			   var userid = $.trim($("#inputUserID").val());
+			   var password = $.trim($("#inputUserPass").val());
+			   
+			   var data = {userid:userid,password:password};
+			   
+			   //把下一步的按钮屏蔽掉
+			    $(this).attr('disabled','disabled');						   
+			    $.post("__APP__/index.php/jwc/getUserData",data,function(data){
+			    	if(data.status)
+			    	{
+			    		$("#userinfo").html("获取数据中");
+			    		$.post(data.back.url,data.back.data,function(data){
+						 if(data.status)
+						  {
+						    		$("#userinfo").html(",个人信息获取成功");
+						    		$("#userid").val(userid);
+						    	}
+						    });
+			    	}
+			    },"json");
+			   
+		});
+      
+        });
+</script>
